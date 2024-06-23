@@ -19,6 +19,7 @@ body {
 
 .container {
   padding: 0 2.4rem;
+  overflow-x: hidden;
 }
 
 .link:link,
@@ -66,7 +67,7 @@ body {
 .grid {
   display: grid;
   column-gap: 6.4rem;
-  row-gap: 9.6rem;
+  row-gap: 3.2rem;
 }
 
 .grid__col--2 {
