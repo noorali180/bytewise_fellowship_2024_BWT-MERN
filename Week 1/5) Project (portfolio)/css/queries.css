@@ -1,3 +1,4 @@
+/* BREAKPOINT */
 @media (max-width: 950px) {
   html {
     font-size: 56.25%;
@@ -11,7 +12,7 @@
     padding-top: 14rem;
   }
   .hero__details {
-    max-width: 30%;
+    max-width: 50%;
     margin: 0;
   }
 
@@ -27,6 +28,7 @@
   }
 }
 
+/* BREAKPOINT */
 @media (max-width: 800px) {
   .heading__cta {
     font-size: 6.4rem;
@@ -38,11 +40,24 @@
   .accordion {
     min-width: 40rem;
   }
+
+  .bg-image {
+    width: 600px;
+  }
 }
 
+/* BREAKPOINT */
 @media (max-width: 720px) {
   html {
     font-size: 50%;
+  }
+
+  .heading__hero {
+    font-size: 15rem;
+  }
+
+  .hero__details {
+    max-width: 40%;
   }
 
   .grid__col--3 {
@@ -67,22 +82,86 @@
     min-width: 100%;
   }
 
-  .grid__cta{
-     grid-template-columns: 1fr;
-     row-gap: 3.2rem;
+  .grid__cta {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
   }
-  .btn__cta{
-     margin-left: 0;
-     margin-right: auto;
-  }
-
-  .footer{
-     flex-direction: column;
-     gap: 2rem;
-     padding-top: 3.4rem;
+  .btn__cta {
+    margin-left: 0;
+    margin-right: auto;
   }
 
-  .header__work .heading__secondary{
-     margin-bottom: 1rem;
+  .footer {
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 3.4rem;
+  }
+
+  .header__work .heading__secondary {
+    margin-bottom: 1rem;
+  }
+
+  .bg-image {
+    width: 500px;
+  }
+}
+
+/* BREAKPOINT */
+@media (max-width: 540px) {
+  .heading__hero {
+    font-size: 12rem;
+  }
+
+  .bg-image {
+    display: none;
+  }
+}
+
+/* BREAKPOINT */
+@media (max-width: 390px) {
+  html {
+    font-size: 31.25%;
+  }
+
+  .section__hero {
+    padding-bottom: 4rem;
+  }
+
+  .hero__box--1 {
+    margin-bottom: 6.4rem;
+  }
+
+  .hero__details {
+    max-width: 60%;
+  }
+
+  .hero__box--2 {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+    column-gap: 0;
+  }
+
+  .hero__social {
+    margin-left: 0;
+  }
+
+  .section__help {
+    padding: 4rem 0;
+  }
+
+  .section__work {
+    padding: 4rem 0;
+  }
+
+  .section__process{
+    padding: 4rem 0;
+  }
+
+  .section__cta{
+    padding-top: 5rem;
+  }
+
+  .bg-image {
+    display: none;
   }
 }
