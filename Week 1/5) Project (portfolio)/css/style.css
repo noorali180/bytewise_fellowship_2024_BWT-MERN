@@ -69,6 +69,62 @@
   font-size: 1.6rem;
 }
 
+/* MOBILE NAVIGATION */
+.btn__nav--mobile {
+  font-size: 2.5rem;
+  cursor: pointer;
+  outline: none;
+  display: none;
+}
+
+.nav__mobile {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 100;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.nav__mobile nav {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.closebtn__nav--mobile {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+
+.nav__mobile .nav__items {
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.nav__mobile .nav__link {
+  font-size: 3rem;
+}
+
+.hide-nav {
+  transform: translateX(100%);
+  opacity: 0;
+}
+/* end of mobile nav */
+
+/* HERO SECTION */
 .section__hero {
   padding-top: 18.2rem;
   padding-bottom: 9.6rem;
@@ -138,6 +194,7 @@
   font-size: 1.8rem;
   font-weight: 500;
 }
+/*  */
 
 /* HELP SECTION */
 .section__help {
@@ -161,6 +218,7 @@
   font-size: 1.8rem;
   line-height: 1.2;
 }
+/*  */
 
 /* WORK SECTION */
 .section__work {
@@ -204,6 +262,7 @@
 .work__total {
   font-size: 1.4rem;
 }
+/*  */
 
 /* PROCESS SECTION */
 .section__process {
@@ -252,6 +311,7 @@
   line-height: 1.2;
   padding: 1rem;
 }
+/*  */
 
 /* CTA SECTION */
 .section__cta {
@@ -266,6 +326,7 @@
   margin-left: auto;
   align-self: last baseline;
 }
+/*  */
 
 /* FOOTER SECTION */
 .footer {

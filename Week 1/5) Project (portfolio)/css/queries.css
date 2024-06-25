@@ -108,6 +108,13 @@
 
 /* BREAKPOINT */
 @media (max-width: 540px) {
+  .nav {
+    display: none;
+  }
+  .btn__nav--mobile {
+    display: block;
+  }
+
   .heading__hero {
     font-size: 12rem;
   }
@@ -153,11 +160,11 @@
     padding: 4rem 0;
   }
 
-  .section__process{
+  .section__process {
     padding: 4rem 0;
   }
 
-  .section__cta{
+  .section__cta {
     padding-top: 5rem;
   }
 

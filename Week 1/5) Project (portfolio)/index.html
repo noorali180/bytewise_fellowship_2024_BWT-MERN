@@ -10,6 +10,12 @@
       rel="stylesheet"
     />
 
+    <!-- FONT AWESOME (ICONS) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/general.css" />
@@ -24,7 +30,8 @@
         <div class="logo__box">
           <a href="#" class="link logo">AMStudio</a>
         </div>
-        <nav class="nav">
+        <!-- MAIN NAVIGATION -->
+        <nav class="nav nav__main">
           <ul class="nav__items">
             <li class="nav__item">
               <a href="#" class="link nav__link">About</a>
@@ -40,6 +47,30 @@
             </li>
           </ul>
         </nav>
+        <!-- END MAIN NAVIGATION -->
+
+        <!-- MOBILE NAVIGATION -->
+        <i class="fa-solid fa-bars btn__nav--mobile"></i>
+        <div class="nav__mobile hide-nav">
+          <nav>
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="#" class="link nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Work</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Process</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="link nav__link">Contact</a>
+              </li>
+            </ul>
+            <i class="fa-solid fa-xmark closebtn__nav--mobile"></i>
+          </nav>
+        </div>
+        <!-- END MOBILE NAVIGATION -->
       </header>
 
       <!-- HERO SECTION -->
@@ -115,7 +146,11 @@
 
       <!-- WORK SECTION -->
       <section class="section__work">
-        <img src="./assets/images/bg-image.png" alt="background image of work section" class="bg-image">
+        <img
+          src="./assets/images/bg-image.png"
+          alt="background image of work section"
+          class="bg-image"
+        />
         <!-- heading -->
         <header class="header__work">
           <h2 class="heading__secondary">
@@ -289,6 +324,6 @@
     </div>
 
     <!-- JS SCRIPT -->
-     <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
