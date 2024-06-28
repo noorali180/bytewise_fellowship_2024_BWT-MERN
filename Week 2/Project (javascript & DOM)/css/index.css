@@ -28,11 +28,16 @@ body {
 }
 
 .container {
-  margin: 5rem auto;
+  /* margin: 5rem auto; */
   width: 450px;
   max-height: 500px;
   background-color: #fff;
   border-radius: 1rem;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
 }
 
 .top {
@@ -109,9 +114,9 @@ body {
   max-height: 300px;
   overflow-y: scroll;
 }
-.bottom::-webkit-scrollbar{
-     /* width: 0; */
-     display: none;
+.bottom::-webkit-scrollbar {
+  /* width: 0; */
+  display: none;
 }
 
 .list {
@@ -155,8 +160,8 @@ body {
   margin: 0 auto;
   /* border: 1px solid red; */
 }
-.empty__message h1{
-     font-size: 2rem;
-     color: var(--color-graylight);
-     font-weight: 500;
+.empty__message h1 {
+  font-size: 2rem;
+  color: var(--color-graylight);
+  font-weight: 500;
 }
