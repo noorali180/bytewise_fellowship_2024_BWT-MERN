@@ -1,22 +1,36 @@
 "use strict";
 
-let tasks = [
-  {
-    id: 0,
-    name: "Go for a movie",
-    completed: false,
-  },
-  {
-    id: 1,
-    name: "Buy Groceries",
-    completed: true,
-  },
-  {
-    id: 2,
-    name: "Go to GYM",
-    completed: false,
-  },
-];
+///////////////////////////////////////////////////////////////////////
+const getLocalStorage = function () {
+  return JSON.parse(localStorage.getItem("tasks"));
+};
+
+///////////////////////////////////////////////////////////////////////
+
+// let tasks = [
+//   {
+//     id: 0,
+//     name: "Go for a movie",
+//     completed: false,
+//   },
+//   {
+//     id: 1,
+//     name: "Buy Groceries",
+//     completed: true,
+//   },
+//   {
+//     id: 2,
+//     name: "Go to GYM",
+//     completed: false,
+//   },
+// ];
+
+let tasks = getLocalStorage() || [];
+
+const setLocalStorage = function () {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+// setLocalStorage();
 
 const form = document.querySelector(".form");
 const taskInput = document.querySelector("#input-task");
@@ -48,6 +62,7 @@ const addNewTask = function (e) {
 
   showTasks();
   taskInput.value = "";
+  setLocalStorage();
 };
 
 /////////////////////
@@ -70,16 +85,16 @@ const showTasks = function (filter = "all") {
     return;
   }
 
-  filteredTasks.forEach((task, i) => {
+  filteredTasks.forEach((task) => {
     const html = `
-           <li class="list__item" data-id=${i + 0}>
+           <li class="list__item" data-id=${task.name.split(" ").join()}>
             <div>
               <input type="checkbox" class="check" ${
                 task.completed === true ? "checked" : ""
-              } data-id=${i}/>
+              } />
               <p class="task">${task.name}</p>
             </div>
-            <i class="fa-solid fa-ellipsis options"></i>
+            <i class="fa-solid fa-trash-can delete"></i>
           </li>
      `;
 
@@ -105,11 +120,15 @@ const filterTasks = function (e) {
 const toggleCompletionOfTask = function (e) {
   const target = e.target;
 
+  if (target.classList.contains("delete")) deleteTask(e);
+
   if (!target.classList.contains("check")) return;
 
-  const parentEl = e.target.closest("li");
-  const id = +parentEl.dataset.id;
-  const taskIndex = tasks.findIndex((task) => task.id === id);
+  const parentEl = e.target.closest(".list__item");
+  const name = parentEl.dataset.id;
+  const taskIndex = tasks.findIndex(
+    (task) => task.name === name.split(",").join(" ")
+  );
 
   if (target.checked) markTaskComplete(taskIndex);
   else if (!target.checked) markTaskPending(taskIndex);
@@ -118,19 +137,38 @@ const toggleCompletionOfTask = function (e) {
 const markTaskComplete = function (index) {
   tasks[index].completed = true;
   showTasks(activeFilter);
+  setLocalStorage();
 };
 
 const markTaskPending = function (index) {
   tasks[index].completed = false;
   showTasks(activeFilter);
+  setLocalStorage();
 };
 
+////////////////////
+const deleteTask = function (e) {
+  const target = e.target;
+
+  if (!target.classList.contains("delete")) return;
+
+  const parentEl = e.target.closest(".list__item");
+  const name = parentEl.dataset.id;
+  const taskIndex = tasks.findIndex(
+    (task) => task.name === name.split(",").join(" ")
+  );
+
+  tasks.splice(taskIndex, 1);
+  showTasks(activeFilter);
+  setLocalStorage();
+};
 ////////////////////
 const clearAllTasks = function () {
   if (!tasks.length) return;
 
   tasks = [];
   showTasks();
+  setLocalStorage();
 };
 
 ///////////////////
@@ -143,3 +181,4 @@ btnClear.addEventListener("click", clearAllTasks);
 filterTab.addEventListener("click", filterTasks);
 list.addEventListener("click", toggleCompletionOfTask);
 init();
+console.log(getLocalStorage());
