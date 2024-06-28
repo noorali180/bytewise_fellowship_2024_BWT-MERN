@@ -23,9 +23,14 @@ const taskInput = document.querySelector("#input-task");
 const filterTab = document.querySelector(".filters");
 const filters = document.querySelectorAll(".filter");
 const list = document.querySelector(".list");
+const taskItem = document.querySelectorAll(".list__item");
 const emptyMessage = document.querySelector(".empty__message");
 const btnClear = document.querySelector(".btn__clear");
 
+let activeFilter = "all";
+/////////////////
+
+/////////////////
 const addNewTask = function (e) {
   e.preventDefault();
 
@@ -45,6 +50,7 @@ const addNewTask = function (e) {
   taskInput.value = "";
 };
 
+/////////////////////
 const showTasks = function (filter = "all") {
   list.innerHTML = "";
   emptyMessage.classList.add("hidden");
@@ -81,6 +87,7 @@ const showTasks = function (filter = "all") {
   });
 };
 
+////////////////
 const filterTasks = function (e) {
   const target = e.target;
 
@@ -88,11 +95,37 @@ const filterTasks = function (e) {
 
   filters.forEach((filter) => filter.classList.remove("active"));
   target.classList.add("active");
+  activeFilter = document.querySelector(".filter.active").dataset.filter;
 
   const filter = target.dataset.filter;
   showTasks(filter);
 };
 
+///////////////////
+const toggleCompletionOfTask = function (e) {
+  const target = e.target;
+
+  if (!target.classList.contains("check")) return;
+
+  const parentEl = e.target.closest("li");
+  const id = +parentEl.dataset.id;
+  const taskIndex = tasks.findIndex((task) => task.id === id);
+
+  if (target.checked) markTaskComplete(taskIndex);
+  else if (!target.checked) markTaskPending(taskIndex);
+};
+
+const markTaskComplete = function (index) {
+  tasks[index].completed = true;
+  showTasks(activeFilter);
+};
+
+const markTaskPending = function (index) {
+  tasks[index].completed = false;
+  showTasks(activeFilter);
+};
+
+////////////////////
 const clearAllTasks = function () {
   if (!tasks.length) return;
 
@@ -100,6 +133,7 @@ const clearAllTasks = function () {
   showTasks();
 };
 
+///////////////////
 const init = function () {
   showTasks();
 };
@@ -107,4 +141,5 @@ const init = function () {
 form.addEventListener("submit", addNewTask);
 btnClear.addEventListener("click", clearAllTasks);
 filterTab.addEventListener("click", filterTasks);
+list.addEventListener("click", toggleCompletionOfTask);
 init();
