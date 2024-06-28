@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-     <!-- CSS STYLE SHEET -->
-      <link rel="stylesheet" href="./css/index.css">
+    <!-- FONT AWESOME ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-     <title>Document</title>
-</head>
-<body>
-     <h1>hello world</h1>
-     
-     <!-- JAVASCRIPT SCRIPTS -->
-      <script src="./js/app.js"></script>
-</body>
+    <!-- CSS STYLE SHEET -->
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="top">
+        <form class="form">
+          <div class="userinput__container">
+            <label for="input-task" class="userinput__label"
+              ><i class="fa-regular fa-pen-to-square"></i
+            ></label>
+            <input
+              type="text"
+              class="userinput__input"
+              placeholder="Add a New Task + Enter"
+              id="input-task"
+            />
+          </div>
+        </form>
+        <div class="tab">
+          <div class="filters">
+            <span class="filter">All</span>
+            <span class="filter">Pending</span>
+            <span class="filter">Completed</span>
+          </div>
+          <button class="btn btn__clear">Clear All</button>
+        </div>
+      </div>
+      <div class="bottom">
+        <ul class="list">
+          <li class="list__item">
+            <div>
+              <input type="checkbox" class="check" />
+              <p class="task">Go for a movie</p>
+            </div>
+            <i class="fa-solid fa-ellipsis options"></i>
+          </li>
+          <li class="list__item">
+            <div>
+              <input type="checkbox" class="check" />
+              <p class="task">Buy Groceries</p>
+            </div>
+            <i class="fa-solid fa-ellipsis options"></i>
+          </li>
+        </ul>
+        <div class="empty__message hidden">
+          <h1>Sorry there's nothing to show :(</h1>
+        </div>
+      </div>
+    </main>
+
+    <!-- JAVASCRIPT SCRIPTS -->
+    <script src="./js/app.js"></script>
+  </body>
 </html>
