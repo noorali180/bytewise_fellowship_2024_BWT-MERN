@@ -1,0 +1,126 @@
+:root {
+  --bg-color-main: #151515;
+  --bg-color-sec: #222222;
+  --text-color-main: #fffffe;
+  --text-color-sec: #cccccc;
+  --text-color-highlight: #c3c3c3;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-height: 100vh;
+  font-family: Helvetica, sans-serif;
+  background-color: var(--bg-color-main);
+  color: var(--text-color-sec);
+  padding: 3rem 8rem;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.heading {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 5rem;
+  color: var(--text-color-main);
+}
+.heading span {
+  font-size: 1.8rem;
+}
+
+.header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  line-height: 1.3;
+}
+
+.main {
+  /* height: 80vh; */
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* background-color: blue; */
+}
+
+.box {
+  background-color: var(--bg-color-sec);
+  border-radius: 1.6rem;
+  height: 200px;
+  padding: 2.5rem 2rem;
+  overflow: hidden;
+}
+.box::-webkit-scrollbar {
+  display: none;
+}
+
+.input__text--box {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  color: var(--text-color-highlight);
+  background-color: transparent;
+  resize: none;
+}
+
+.input__text--box::-webkit-scrollbar {
+  width: 5px;
+  /* display: none; */
+}
+
+.input__text--box::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.input__text--box::-webkit-scrollbar-thumb {
+  background-color: var(--text-color-highlight);
+  border-radius: 10px;
+  /* border: 2px solid #fffff; */
+}
+
+.output__box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.group .title {
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+}
+
+.group .output {
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+}
