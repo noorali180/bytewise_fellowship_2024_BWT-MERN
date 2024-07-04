@@ -30,8 +30,15 @@ const render = function () {
   const spacesCount = calcSpacesCount(input);
   spaceEl.innerHTML = spacesCount;
 
-  
-  console.log(spacesCount);
+  const lettersCount = calcLettersCount(input);
+  letterEl.innerHTML = lettersCount;
+
+  const digitsCount = calcDigitsCount(input);
+  digitEl.innerHTML = digitsCount;
+
+  const specialCharactersCount = calcSpecialCharactersCount(input);
+  specialCharEl.innerHTML = specialCharactersCount;
+
 };
 
 const calcCharactersCount = function (str) {
@@ -75,5 +82,25 @@ const calcSpacesCount = function (str) {
 
   return output === 0 ? "-" : output;
 };
+
+const calcLettersCount = function (str) {
+  const output = str.split(/[a-zA-Z]/g).length - 1;
+
+  return output === 0 ? "-" : output;
+};
+
+const calcDigitsCount = function (str) {
+  const output = str.split(/[0-9]/g).length - 1;
+
+  return output === 0 ? "-" : output;
+};
+
+const calcSpecialCharactersCount = function(str) {
+     const output =
+       str.split(/[!@#\$%\^\&\*\(\)\-\_\=\+\[\{\]\}\\|;:'",<\.>\/\?]/g).length -
+       1;
+
+     return output === 0 ? "-" : output;
+}
 
 inputEl.addEventListener("keyup", render);

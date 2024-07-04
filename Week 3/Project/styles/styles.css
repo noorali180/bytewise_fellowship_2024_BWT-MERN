@@ -55,7 +55,7 @@ body {
 
 .main {
   /* height: 80vh; */
-  margin-top: 8rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
