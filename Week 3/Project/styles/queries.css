@@ -1,0 +1,73 @@
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  body {
+    padding: 3rem 4rem;
+  }
+
+  .header {
+    gap: 3rem;
+  }
+  .header__des {
+    gap: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .main {
+    margin-top: 6rem;
+    gap: 3rem;
+  }
+
+  .output__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .input__box {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    padding: 2rem;
+  }
+
+  .header__des {
+    gap: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .main {
+    margin-top: 4rem;
+    gap: 3rem;
+  }
+
+  .input__box {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  body {
+    padding: 1rem;
+  }
+
+  .output__box {
+    grid-template-columns: 1fr;
+  }
+
+  .group {
+    gap: 1rem;
+  }
+
+  .output__box {
+    padding: 2rem;
+    row-gap: 5rem;
+  }
+}

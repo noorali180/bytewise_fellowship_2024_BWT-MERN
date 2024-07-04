@@ -17,11 +17,10 @@ html {
 }
 
 body {
-  max-height: 100vh;
   font-family: Helvetica, sans-serif;
   background-color: var(--bg-color-main);
   color: var(--text-color-sec);
-  padding: 3rem 8rem;
+  padding: 4rem 8rem;
   overflow-x: hidden;
 }
 
@@ -42,7 +41,7 @@ body {
   font-size: 1.8rem;
 }
 
-.header div {
+.header__des {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,12 +65,13 @@ body {
 .box {
   background-color: var(--bg-color-sec);
   border-radius: 1.6rem;
-  height: 200px;
   padding: 2.5rem 2rem;
   overflow: hidden;
 }
-.box::-webkit-scrollbar {
-  display: none;
+
+.input__box{
+  height: 300px;
+
 }
 
 .input__text--box {
@@ -105,6 +105,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
   place-items: center;
   text-align: center;
+  row-gap: 4rem;
+  padding: 4rem 2rem;
 }
 
 .group {
@@ -112,15 +114,18 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1rem;
+  flex-shrink: 1;
 }
 
 .group .title {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   letter-spacing: 1.2px;
 }
 
 .group .output {
-  font-size: 1.4rem;
-  letter-spacing: 1.2px;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+
 }
