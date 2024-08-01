@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
+const dateFormatter = require("date-format");
 
 const users = JSON.parse(
   fs.readFileSync(`${__dirname}/../data/users_data.json`, "utf-8")
@@ -51,11 +52,11 @@ exports.createUser = (req, res, next) => {
         "you have missed one of the required field {first_name, last_name, email, gender}",
     });
 
-  const id = uuid();
-  const created_at = new IntlDateFormat(Date.now());
-
-  console.log(id);
-  console.log(created_at);
+  const id = uuidv4();
+  const created_at = dateFormatter("dd:MM:yyyy", new Date()).replaceAll(
+    ":",
+    "/"
+  );
 
   const newUser = {
     id,
@@ -65,6 +66,13 @@ exports.createUser = (req, res, next) => {
     gender,
     created_at,
   };
+
+  users.push(newUser);
+
+  fs.writeFileSync(
+    `${__dirname}/../data/users_data.json`,
+    JSON.stringify(users)
+  );
 
   res.status(201).json({
     status: "success",

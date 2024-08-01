@@ -9,6 +9,7 @@
   "author": "Noor Ali",
   "license": "ISC",
   "dependencies": {
+    "date-format": "^4.0.14",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "uuid": "^10.0.0"
