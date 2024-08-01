@@ -25,7 +25,7 @@ exports.getAllUsers = (req, res, next) => {
 
 exports.getUser = (req, res, next) => {
   const { id } = req.params;
-  const user = users.find((user) => +user.id === +id);
+  const user = users.find((user) => String(user.id) === String(id));
 
   if (!user)
     return res.status(400).json({
@@ -88,5 +88,25 @@ exports.updateUser = (req, res, next) => {
 };
 
 exports.deleteUser = (req, res, next) => {
-  res.send("user deleted");
+  const { id } = req.params;
+  const userIndex = users.findIndex((user) => String(user.id) === String(id));
+
+  if (!users[userIndex])
+    return res.status(404).json({
+      status: "fail",
+      message: "User not found with that id",
+    });
+
+  users.splice(userIndex, 1);
+
+  fs.writeFileSync(
+    `${__dirname}/../data/users_data.json`,
+    JSON.stringify(users)
+  );
+
+  res.status(200).json({
+    status: "success",
+    message: "user deleted successfully",
+    data: null,
+  });
 };
