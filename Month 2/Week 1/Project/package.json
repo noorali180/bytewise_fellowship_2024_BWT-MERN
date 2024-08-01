@@ -2,7 +2,6 @@
   "name": "users_api",
   "version": "1.0.0",
   "description": "Restful API for doing CRUD operations for users data",
-  "type": "module",
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./server/server.js"
@@ -11,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

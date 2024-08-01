@@ -1,6 +1,6 @@
-import express from "express";
-import morgan from "morgan";
-import userRouter from "./routes/userRoutes.js";
+const express = require("express");
+const morgan = require("morgan");
+const userRouter = require("./routes/userRoutes.js");
 
 const app = express();
 
@@ -11,4 +11,4 @@ app.use(morgan("dev"));
 
 app.use("/api/v1/users", userRouter);
 
-export default app;
+module.exports = app;
