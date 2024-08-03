@@ -4,7 +4,8 @@
   "description": "Restful API for doing CRUD operations for users data",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./server/server.js"
+    "start": "node ./server/server.js",
+    "dev": "nodemon ./server/server.js"
   },
   "author": "Noor Ali",
   "license": "ISC",
@@ -16,5 +17,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
