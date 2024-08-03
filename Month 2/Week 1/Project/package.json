@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./server/server.js",
-    "build": "parcel build ./server/server.js --dist-dir ./public/bundle.js",
+    "build": "parcel build ./server/server.js",
     "dev": "nodemon ./server/server.js"
   },
   "author": "Noor Ali",
