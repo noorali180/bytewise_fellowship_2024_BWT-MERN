@@ -10,7 +10,7 @@ import { Box } from "@mui/material";
 function App() {
   return (
     <BrowserRouter>
-      <Box sx={{ backgroundColor: "#000" }}>
+      <Box sx={{ backgroundColor: "#000 " }}>
         <Navbar />
         <Routes>
           <Route index element={<Feed />} />
