@@ -13,8 +13,9 @@ function Feed() {
     setIsLoading(true);
     fetchFromApi(`search?part=snippet,id&q=${selectedCategory}`)
       .then((data) => setVideos(data.items))
+      .catch((error) => console.log(error.message))
       .finally(() => {
-        setIsLoading((prev) => !prev);
+        setIsLoading(false);
       });
   }, [selectedCategory]);
 
