@@ -9,3 +9,4 @@
 ## Month 2
 
 **1)** *Week 1:* [Project rest_API]() <br>
+**2)** *Week 2:* [Project_youtube_clone_app](https://youtube-clone-app-noorali.netlify.app/) <br>
